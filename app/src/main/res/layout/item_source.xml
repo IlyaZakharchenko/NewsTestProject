@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<data>
+
+		<variable
+				name="viewModel"
+				type="ru.kpfu.itis.newstestproject.ui.source.SourceViewModel"/>
+	</data>
+
+	<RelativeLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:onClick="@{viewModel::openNews}"
+			android:paddingEnd="16dp"
+			android:paddingStart="16dp">
+
+		<TextView
+				android:id="@+id/name"
+				tools:text="AAAAAA"
+				android:textColor="@android:color/black"
+				app:mutableText="@{viewModel.getSourceName()}"
+				android:textStyle="bold"
+				android:layout_marginTop="8dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+
+		<TextView
+				android:id="@+id/description"
+				android:layout_below="@id/name"
+				android:textColor="@android:color/black"
+
+				app:mutableText="@{viewModel.getSourceDescription()}"
+				android:layout_marginTop="8dp"
+				tools:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+
+		<View
+				android:id="@+id/divider"
+				android:layout_width="match_parent"
+				android:layout_marginTop="8dp"
+				android:layout_below="@+id/description"
+				android:layout_height="1dp"
+				android:background="?android:attr/listDivider"/>
+	</RelativeLayout>
+</layout>
